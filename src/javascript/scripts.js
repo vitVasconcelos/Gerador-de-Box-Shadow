@@ -8,6 +8,11 @@ class BoxShadowGenerator {
         blurRef,
         spread,
         spreadRef,
+        color,
+        colorRef,
+        opacity,
+        opacityRef,
+        inset,
         previewBox,
         rule,
         webkitRule,
@@ -22,6 +27,12 @@ class BoxShadowGenerator {
         this.blurRef = blurRef;
         this.spread = spread;
         this.spreadRef = spreadRef;
+        this.color = color;
+        this.colorRef = colorRef;
+        this.opacity = opacity;
+        this.opacityRef = opacityRef;
+        this.inset = inset;
+        this.insetRef= inset.checked;
         this.previewBox = previewBox;
         this.rule = rule;
         this.webkitRule = webkitRule;
@@ -33,12 +44,17 @@ class BoxShadowGenerator {
         this.blurRef.value = this.blur.value;
         this.spreadRef.value = this.spread.value;
 
+        this.colorRef.value = this.color.value;
+        this.opacityRef.value = this.opacity.value;
+
        this.applyRule();
        this.showRule();
     }
 
     applyRule(){
-        this.previewBox.style.boxShadow = `${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.spreadRef.value}px #000000`;
+        const rgbValue = this.hexToRgb(this.colorRef.value);
+
+        this.previewBox.style.boxShadow = `${this.insetRef ? "inset": ""} ${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.spreadRef.value}px rgba(${rgbValue}, ${this.opacityRef.value})`;
 
         this.currentRule = this.previewBox.style.boxShadow;
     }
@@ -62,10 +78,24 @@ class BoxShadowGenerator {
             case "spread":
                 this.spreadRef.value = value;
                 break;
+            case "color":
+                this.colorRef.value = value;
+                break;
+            case "opacity":
+                this.opacityRef.value = value;
+                break;
+            case "inset":
+                this.insetRef = value;
+                break;
         }
         this.applyRule();
         this.showRule();
     }
+    hexToRgb(hex) {
+        return `${("0x" + hex[1] + hex[2]) | 0}, ${("0x" + hex[3] + hex[4]) | 0}, ${
+          ("0x" + hex[5] + hex[6]) | 0
+        }`;
+      }
 }
 
 //Seleção de elementos 
@@ -77,6 +107,12 @@ const blur = document.querySelector("#blur");
 const blurRef = document.querySelector("#blur-value");
 const spread = document.querySelector("#spread");
 const spreadRef = document.querySelector("#spread-value");
+
+const color = document.querySelector("#color");
+const colorRef = document.querySelector("#color-value");
+const opacity = document.querySelector("#opacity");
+const opacityRef = document.querySelector("#opacity-value");
+const inset = document.querySelector("#inset");
 
 const previewBox = document.querySelector("#box");
 
@@ -93,6 +129,11 @@ const boxShadow = new BoxShadowGenerator(
     blurRef,
     spread,
     spreadRef,
+    color,
+    colorRef,
+    opacity,
+    opacityRef,
+    inset,
     previewBox,
     rule,
     webkitRule,
@@ -126,3 +167,38 @@ spread.addEventListener("input", (e)=>{
     
     boxShadow.updateValue("spread",value);
 });
+
+color.addEventListener("input", (e) =>{
+    const value = e.target.value;
+
+    boxShadow.updateValue("color",value);
+} );
+opacity.addEventListener("input" ,(e) =>{
+    const value = e.target.value;
+
+    boxShadow.updateValue("opacity",value);
+});
+
+inset.addEventListener("input", (e)=>{
+    value = e.target.checked;
+
+    boxShadow.updateValue("inset",value);
+});
+
+//copiar regra
+
+const rulesArea = document.querySelector("#rules-area");
+const copyInstructions = document.querySelector("#copy-instructions");
+
+rulesArea.addEventListener("click", ()=>{
+    const rules = rulesArea.innerText.replace(/^\s*\n/gm, "");
+
+    navigator.clipboard.writeText(rules).then(()=>{
+        copyInstructions.innerText = "Regra copiada com sucesso";
+
+        setTimeout(() =>{
+            copyInstructions.innerText = "Clique no quadro acima para copiar as regras";
+        }, 1000);
+    });
+
+})
