@@ -20,6 +20,53 @@ Gerador de **Box Shadow** desenvolvido com **HTML, CSS e JavaScript**, que permi
   * `-moz-box-shadow`
 * Copiar código com apenas um clique
 
+
+## 📸 Preview
+
+## Tela Inicial
+
+**Na tela inicial é possível ver as configurações iniciais do Box Shadow e a sua prévia aplicada**
+
+<img width="1343" height="641" alt="1" src="https://github.com/user-attachments/assets/21052ef5-341d-41b2-b869-e8a9a1846d5b" />
+
+## Aplicando novas regras de Box Shadow
+
+**Aqui é possível visualizar as mudanças feitas nas configurações da Box Shadow aplicadas**
+
+<img width="1331" height="719" alt="2" src="https://github.com/user-attachments/assets/bd597492-1876-4c38-a231-b563f603af80" />
+
+## Aplicação da Sombra interna (Inset)
+
+**O usuário pode definir se a sombra será interna ou não**
+
+<img width="1345" height="633" alt="3" src="https://github.com/user-attachments/assets/c01183c7-a413-4254-b240-0b936f1d8d5d" />
+
+## Regra de Box Shadow 
+
+**Aqui é possível visualizar e copiar a regra de Box Shadow gerada de acordo com as configurações escolhidas**
+
+<img width="1347" height="641" alt="4" src="https://github.com/user-attachments/assets/971e90c3-7518-4b2e-b203-64c5fe86255b" />
+
+## Copiando regras de Box Shadow
+
+**O texto abaixo da regra de box shadow muda quando o usuário copia o código**
+
+<img width="1353" height="643" alt="4-1" src="https://github.com/user-attachments/assets/01c168a3-4df4-46ff-aae8-39a0bee0bba6" />
+
+## Responsividade
+
+**O site foi adaptado para telas menores**
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/aa8e3e53-e6aa-478a-8a07-0516d0bffa36" width="30%" />
+  <img src="https://github.com/user-attachments/assets/5acfd3d6-2fc7-43a6-ab00-8a617ef55c32" width="30%" />
+  <img src="https://github.com/user-attachments/assets/9269640e-55ef-4089-b7a1-3cf4cfcbbc7d" width="30%" />
+</p>
+
+
+
+
+
 ## 🛠️ Tecnologias Utilizadas
 
 * HTML5
@@ -77,14 +124,6 @@ cd box-shadow-generator
 
 Este projeto foi desenvolvido para praticar manipulação de DOM, lógica de programação e criação de ferramentas úteis para front-end.
 
-## 📸 Preview
-
-Adicione aqui uma imagem ou GIF do projeto funcionando.
-
-```bash
-exemplo:
-![preview](./img/preview.png)
-```
 
 ## 👩‍💻 Autora
 
