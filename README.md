@@ -87,21 +87,13 @@ Neste projeto foram praticados conceitos importantes de JavaScript, como:
 * Clipboard API
 * Atualização dinâmica de estilos CSS
 
-## 📂 Estrutura do Projeto
-
-```bash
-📁 box-shadow-generator
- ┣ 📄 index.html
- ┣ 📄 style.css
- ┗ 📄 script.js
-```
 
 ## ▶️ Como Executar
 
 1. Clone este repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/box-shadow-generator.git
+git clone https://github.com/vitVasconcelos/Gerador-de-Box-Shadow.git
 ```
 
 2. Acesse a pasta do projeto:
@@ -123,11 +115,6 @@ cd box-shadow-generator
 ## 🎯 Objetivo do Projeto
 
 Este projeto foi desenvolvido para praticar manipulação de DOM, lógica de programação e criação de ferramentas úteis para front-end.
-
-
-## 👩‍💻 Autora
-
-Desenvolvido por **Vitória Vasconcelos** 🚀
 
 ## 📌 Melhorias Futuras
 
